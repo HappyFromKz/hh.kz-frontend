@@ -29,6 +29,11 @@ const routes = [
         path: 'vacancies',
         name: 'vacancies',
         component: VacanciesPage,
+        meta: {
+          user: true,
+          admin: true,
+          hr: true
+        }
       },
       {
         path: 'vacancy-replies/:id',
@@ -43,6 +48,11 @@ const routes = [
         path: 'profile',
         name: 'profile',
         component: UserProfile,
+        meta: {
+          user: true,
+          admin: true,
+          hr: true
+        }
       },
       {
         path: 'not-found',
@@ -73,7 +83,7 @@ const router = createRouter({
   routes
 })
 
-const pagesWithoutAuthorization = ['app', 'vacancies', 'vacancy-replies', 'home', 'login', 'register', 'profile', 'forbidden', 'not-found']
+const pagesWithoutAuthorization = ['app', 'home', 'login', 'register', 'forbidden', 'not-found']
 
 router.beforeEach(async (to) => {
   console.log(to)

@@ -53,7 +53,7 @@ export default {
     </div>
   </div>
   <div v-else>
-    <h1>Вакансии нет</h1>
+    <h1>У вакансии нет откликов</h1>
   </div>
 </template>
 

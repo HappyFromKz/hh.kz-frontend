@@ -102,7 +102,9 @@ export default {
     await this.getVacancies()
     await this.getCategories()
     await this.getEmploymentTypes()
-    await this.getCvs()
+    if(this.role === 'user'){
+      await this.getCvs()
+    }
   }
 }
 </script>

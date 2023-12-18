@@ -71,8 +71,8 @@ export default {
       <router-link class="me-2" v-if="userData.role === 'admin'" to="/admin-categories">
         <Button icon="pi pi-user" label="Адним панель" />
       </router-link>
-      <router-link v-if="userData.role === 'hr'" to="/admin-categories">
-        <Button icon="pi pi-align-justify" label="Мои вакансий" />
+      <router-link v-if="userData.role === 'hr'" to="/vacancies">
+        <Button icon="pi pi-align-justify" label="Вакансии" />
       </router-link>
     </template>
   </Card>
