@@ -27,7 +27,7 @@ export default {
           if (await authService.login(this.form)){
             let role = localStorage.getItem('role')
             if(role === 'user'){
-              this.$router.push('/user')
+              this.$router.push('/vacancies')
             } else if(role === 'admin' || role === 'moderator') {
               this.$router.push('/admin')
             }
