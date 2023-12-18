@@ -6,9 +6,9 @@
       </template>
     </Column>
     <Column field="name" header="Name"></Column>
-    <Column v-if="['moderator', 'admin'].includes(role)" field="category" header="Actions">
+    <Column v-if="['hr', 'admin'].includes(role)" field="category" header="Actions">
       <template #body="{data}">
-        <Button v-if="['moderator', 'admin'].includes(role)" @click="openModal('Update', data.id)" style="margin-right: 20px;"
+        <Button v-if="['hr', 'admin'].includes(role)" @click="openModal('Update', data.id)" style="margin-right: 20px;"
                 type="button" class="p-button-success mx-2">Change</Button>
         <Button v-if="['admin'].includes(role)" @click="deleteCategory(data.id)" type="button" class="p-button-danger">Delete</Button>
       </template>

@@ -36,9 +36,9 @@ export default {
     <template v-if="$route.name !== 'login' && $route.name !== 'register'" #end>
       <div v-if="username">
         <router-link to="/profile">
-              <span class="navbar-text me-2" style="font-size: 18px">
-                {{ username }}
-              </span>
+          <span class="navbar-text me-2" style="font-size: 18px">
+            {{ username }}
+          </span>
         </router-link>
         <Button @click="logout" type="button" class="p-button-danger">Выйти</Button>
       </div>

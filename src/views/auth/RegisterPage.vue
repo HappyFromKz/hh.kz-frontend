@@ -20,17 +20,11 @@ export default {
     }
   },
   methods:{
-    async register(event){
-      event.preventDefault();
+    async register(){
       if (this.form.password === this.form.passwordConfirm){
         if (await authService.register(this.form)){
           if (await authService.login(this.form)){
-            let role = localStorage.getItem('role')
-            if(role === 'user'){
-              this.$router.push('/vacancies')
-            } else if(role === 'admin' || role === 'moderator') {
-              this.$router.push('/admin')
-            }
+            this.$router.push('/vacancies')
           }
         }
       } else {
@@ -54,7 +48,7 @@ export default {
                 <p>ФИО</p>
                 <InputText type="text" v-model="form.name" placeholder="ФИО"/>
                 <p>Почта</p>
-                <InputText type="text" v-model="form.email" placeholder="Почта"/>
+                <InputText type="email" v-model="form.email" placeholder="Почта"/>
                 <p>Пароль</p>
                 <Password v-model="form.password" toggleMask placeholder="Пароль"/>
                 <p>Повторите пароль</p>

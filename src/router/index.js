@@ -93,11 +93,7 @@ router.beforeEach(async (to) => {
   if (to.meta[localStorage.getItem('role')]) {
     return true
   }
-  if (to.href.includes('user-product')) {
-    return true
-  }
   return (!to.name) ? {name: 'not-found'} : {name: 'forbidden'}
-
 })
 
 export default router
